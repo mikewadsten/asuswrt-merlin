@@ -6709,7 +6709,7 @@ firmware_check_main(int argc, char *argv[])
 	start_cloudcheck();
 #endif
 
-#if defined(RTCONFIG_USER_LOW_RSSI) && defined(RTCONFIG_BCMARM)
+#if ((defined(RTCONFIG_USER_LOW_RSSI) && defined(RTCONFIG_BCMARM)) || defined(RTCONFIG_NEW_USER_LOW_RSSI))
 	start_roamast();
 #endif
 	return 0;
@@ -7010,7 +7010,7 @@ void start_cloudcheck(void){
 }
 #endif
 
-#if defined(RTCONFIG_USER_LOW_RSSI) && defined(RTCONFIG_BCMARM)
+#if ((defined(RTCONFIG_USER_LOW_RSSI) && defined(RTCONFIG_BCMARM)) || defined(RTCONFIG_NEW_USER_LOW_RSSI))
 void stop_roamast(void){
 	if (pids("roamast"))
                 killall("roamast", SIGTERM);

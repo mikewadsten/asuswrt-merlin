@@ -2407,8 +2407,7 @@ void push_mail(void)
 #endif
 #endif
 
-#if 0
-#ifdef RTCONFIG_USER_LOW_RSSI
+#ifdef RTCONFIG_USER_LOW_RSSI && !defined(RTCONFIG_BCMARM)
 #define ETHER_ADDR_STR_LEN	18
 
 typedef struct wl_low_rssi_count{
@@ -2603,7 +2602,6 @@ void rssi_check()
 			rssi_check_unit(ii);
 	}
 }
-#endif
 #endif
 
 #ifdef RTCONFIG_TOR

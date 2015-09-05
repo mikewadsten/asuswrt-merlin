@@ -2330,7 +2330,7 @@ struct nvram_tuple router_defaults[] = {
 #endif
 	{ "Ate_fw_fail",		"10"},
 	{ "Ate_reboot_delay",		"1"},
-#ifdef RTCONFIG_USER_LOW_RSSI
+#if (defined(RTCONFIG_USER_LOW_RSSI) || defined(RTCONFIG_NEW_USER_LOW_RSSI))
 	{ "wl_user_rssi",		"0"},		/* disabled by default, setting range: -70 ~ -90 */
 #if 0
 	{ "wl_lrc",			"2"},

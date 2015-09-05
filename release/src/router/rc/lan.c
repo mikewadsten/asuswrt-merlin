@@ -981,10 +981,8 @@ void start_wl(void)
 #endif
 #endif /* CONFIG_BCMWL5 */
 
-#if 0
-#ifdef RTCONFIG_USER_LOW_RSSI
+#ifdef RTCONFIG_USER_LOW_RSSI && !defined(RTCONFIG_BCMARM)
 	init_wllc();
-#endif
 #endif
 
 #ifdef RTCONFIG_QTN
@@ -3947,10 +3945,8 @@ void restart_wl(void)
 #endif
 #endif /* CONFIG_BCMWL5 */
 
-#if 0
-#ifdef RTCONFIG_USER_LOW_RSSI
+#ifdef RTCONFIG_USER_LOW_RSSI && !defined(RTCONFIG_BCMARM)
 	init_wllc();
-#endif
 #endif
 
 }
@@ -4087,7 +4083,7 @@ void restart_wireless(void)
 	stop_8021x();
 #endif
 
-#if defined(RTCONFIG_USER_LOW_RSSI) && defined(RTCONFIG_BCMARM)
+#if ((defined(RTCONFIG_USER_LOW_RSSI) && defined(RTCONFIG_BCMARM)) || defined(RTCONFIG_NEW_USER_LOW_RSSI))
 	stop_roamast();
 #endif
 	stop_lan_wl();
@@ -4190,7 +4186,7 @@ void restart_wireless(void)
 	if(nvram_get_int("AllLED") == 0) setAllLedOff();
 #endif
 
-#if defined(RTCONFIG_USER_LOW_RSSI) && defined(RTCONFIG_BCMARM)
+#if ((defined(RTCONFIG_USER_LOW_RSSI) && defined(RTCONFIG_BCMARM)) || defined(RTCONFIG_NEW_USER_LOW_RSSI))
 	start_roamast();
 #endif
 

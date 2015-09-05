@@ -968,7 +968,7 @@ extern void stop_tr(void);
 extern int dhcpc_lease_main(int argc, char *argv[]);
 #endif
 
-#if defined(RTCONFIG_USER_LOW_RSSI) && defined(RTCONFIG_BCMARM)
+#if ((defined(RTCONFIG_USER_LOW_RSSI) && defined(RTCONFIG_BCMARM)) || defined(RTCONFIG_NEW_USER_LOW_RSSI))
 extern void stop_roamast(void);
 extern void start_roamast(void);
 extern int roam_assistant_main(int argc, char *argv[]);

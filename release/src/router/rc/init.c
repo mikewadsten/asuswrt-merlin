@@ -4895,7 +4895,7 @@ int init_nvram(void)
 	add_rc_support("wps_multiband");
 #endif
 
-#ifdef RTCONFIG_USER_LOW_RSSI
+#if (defined(RTCONFIG_USER_LOW_RSSI) || defined(RTCONFIG_NEW_USER_LOW_RSSI))
 	add_rc_support("user_low_rssi");
 #endif
 

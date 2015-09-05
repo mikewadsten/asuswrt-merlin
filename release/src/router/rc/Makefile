@@ -284,7 +284,7 @@ ifeq ($(RTCONFIG_TR069),y)
 OBJS += tr069.o
 endif
 
-ifeq ($(and $(RTCONFIG_USER_LOW_RSSI),$(RTCONFIG_BCMARM)),y)
+ifeq ($(or $(and $(RTCONFIG_USER_LOW_RSSI),$(RTCONFIG_BCMARM)),$(RTCONFIG_NEW_USER_LOW_RSSI)),y)
 OBJS += roamast.o
 endif
 
@@ -506,7 +506,7 @@ ifeq ($(RTCONFIG_TR069),y)
 	@cd $(INSTALLDIR)/sbin && ln -sf rc dhcpc_lease
 endif
 
-ifeq ($(and $(RTCONFIG_USER_LOW_RSSI),$(RTCONFIG_BCMARM)),y)
+ifeq ($(or $(and $(RTCONFIG_USER_LOW_RSSI),$(RTCONFIG_BCMARM)),$(RTCONFIG_NEW_USER_LOW_RSSI)),y)
 	@cd $(INSTALLDIR)/sbin && ln -sf rc roamast
 endif
 

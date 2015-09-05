@@ -378,7 +378,7 @@ static const applets_t applets[] = {
 #ifdef RTCONFIG_TR069
 	{ "dhcpc_lease",		dhcpc_lease_main		},
 #endif
-#if defined(RTCONFIG_USER_LOW_RSSI) && defined(RTCONFIG_BCMARM)
+#if ((defined(RTCONFIG_USER_LOW_RSSI) && defined(RTCONFIG_BCMARM)) || defined(RTCONFIG_NEW_USER_LOW_RSSI))
 	{ "roamast",			roam_assistant_main		},
 #endif
 	{NULL, NULL}
@@ -942,7 +942,7 @@ int main(int argc, char **argv)
 		return 0;
 	}
 #endif
-#if defined(RTCONFIG_USER_LOW_RSSI) && defined(RTCONFIG_BCMARM)
+#if ((defined(RTCONFIG_USER_LOW_RSSI) && defined(RTCONFIG_BCMARM)) || defined(RTCONFIG_NEW_USER_LOW_RSSI))
 	else if (!strcmp(base, "start_roamast")) {
 		start_roamast();
 		return 0;

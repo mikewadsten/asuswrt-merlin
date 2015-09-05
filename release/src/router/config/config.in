@@ -280,6 +280,10 @@ config RTCONFIG_USER_LOW_RSSI
 	bool "User specified accepted min rssi"
 	default n
 
+config RTCONFIG_NEW_USER_LOW_RSSI
+	bool "User specified accepted min rssi"
+	default n
+
 config RTCONFIG_PUSH_EMAIL
 	bool "Push Mail Service Support"
 	default n
