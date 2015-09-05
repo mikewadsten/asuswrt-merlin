@@ -692,7 +692,7 @@
 				::= { professionalWl2g 14 } 			
                                               
 	disconnectClientRSSIWl2g 	OBJECT-TYPE
-				SYNTAX INTEGER (-90..-70)
+				SYNTAX INTEGER (-90..-40)
 				MAX-ACCESS read-write
 				STATUS current
 				DESCRIPTION

@@ -5168,7 +5168,7 @@ write_disconnectClientRSSIWl2g(int      action,
               fprintf(stderr,"write to disconnectClientRSSIWl2g: bad length\n");
               return SNMP_ERR_WRONGLENGTH;
           }
-          if ( *(long *)var_val < -90 || *(long *)var_val > -70 ){
+          if ( *(long *)var_val < -90 || *(long *)var_val > -40 ){
               fprintf(stderr, "write to disconnectClientRSSIWl2g: value out of range\n");
               return SNMP_ERR_WRONGVALUE;
           }
@@ -8680,7 +8680,7 @@ write_disconnectClientRSSIWl5g(int      action,
               fprintf(stderr,"write to disconnectClientRSSIWl5g: bad length\n");
               return SNMP_ERR_WRONGLENGTH;
           }
-          if ( *(long *)var_val < -90 || *(long *)var_val > -70 ){
+          if ( *(long *)var_val < -90 || *(long *)var_val > -40 ){
               fprintf(stderr, "write to disconnectClientRSSIWl5g: value out of range\n");
               return SNMP_ERR_WRONGVALUE;
           }
