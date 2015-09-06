@@ -53,13 +53,13 @@
 #define RAST_INFO(fmt, arg...) \
 	do {	\
 		/* _dprintf("RAST %lu: "fmt, uptime(), ##arg); \ */ \
-		logmessage("RAST %lu: "fmt, uptime(), ##arg); \
+		logmessage("roamast", "RAST %lu: "fmt, uptime(), ##arg); \
 	} while (0)
 #define RAST_DBG(fmt, arg...) \
 	do {	\
 		if(rast_dbg) { \
 			/* _dprintf("RAST %lu: "fmt, uptime(), ##arg); \ */ \
-			logmessage("RAST(debug) %lu: "fmt, uptime(), ##arg); \
+			logmessage("roamast", "RAST(debug) %lu: "fmt, uptime(), ##arg); \
 		} \
 	} while (0)
 
